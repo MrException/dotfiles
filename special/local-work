@@ -1,11 +1,14 @@
 ### env variables
-export JAVA_HOME="/cygdrive/c/Program Files/Java/jdk1.7.0"
-export ANT_HOME="/cygdrive/c/Users/robertm/.ant"
-export NODE_PATH="/cygdrive/c/Program Files (x86)/nodejs:/cygdrive/c/Users/robertm/AppData/Roaming/npm"
+#export JAVA_HOME="/cygdrive/c/Program Files/Java/jdk1.7.0"
+#export ANT_HOME="/cygdrive/c/Users/robertm/.ant"
+#export NODE_PATH="/cygdrive/c/Program Files (x86)/nodejs:/cygdrive/c/Users/robertm/AppData/Roaming/npm"
+#export PYTHON_PATH="/cygdrive/c/Python27":"/cygdrive/c/Python27/Scripts"
 
-LOCAL_PATH=$JAVA_HOME/bin:$ANT_HOME/bin
+#LOCAL_PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PYTHON_PATH
 
-export PATH=$LOCAL_PATH:$SYS_PATH:$USER_PATH:$NODE_PATH
+#export PATH=$LOCAL_PATH:$SYS_PATH:$USER_PATH:$NODE_PATH
+
+export PATH=$SYS_PATH:$USER_PATH:$OLD_PATH
 
 ### aliases
 alias maant='cd ~/workspace/EMR\ v44x/ && ant -f build-development.xml && cd -'

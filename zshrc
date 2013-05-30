@@ -35,6 +35,7 @@ plugins=(git mrexception screen)
 
 source $ZSH/oh-my-zsh.sh
 
+export OLD_PATH=$PATH
 SYS_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 USER_PATH=$HOME/bin:$HOME/scripts:$HOME/local/bin:$HOME/.rvm/bin:./node_modules/.bin/
 export PATH=$USER_PATH:$SYS_PATH
