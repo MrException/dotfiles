@@ -13,4 +13,6 @@ tld=.tld
 --ignore-dir=build
 --ignore-dir=emr-build
 --ignore-dir=tools
+--ignore-dir=.metadata
+--ignore-dir=node_modules
 --nosql
