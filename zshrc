@@ -31,7 +31,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mrexception screen)
+plugins=(git mrexception)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,28 +45,31 @@ export NODE_PATH=/home/rob/local/jsctags/lib/jsctags/:$NODE_PATH
 # make sure vim is set as the editor
 export EDITOR="vim"
 
+stty -ixon # disables ctrl-s freezing terminal
+set -o vi # turns on vi mode
+
 #initialize keychain
 #keychain github
 
 # source the keychain file for SSH keys
-if [ -z "$HOSTNAME" ]; then
-  HOSTNAME=$(uname -n)
-fi
-if [ -f $HOME/.keychain/$HOSTNAME-sh ]; then
-  . $HOME/.keychain/$HOSTNAME-sh
-fi
-if [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ]; then
-  . $HOME/.keychain/$HOSTNAME-sh-gpg
-fi
+#if [ -z "$HOSTNAME" ]; then
+#  HOSTNAME=$(uname -n)
+#fi
+#if [ -f $HOME/.keychain/$HOSTNAME-sh ]; then
+#  . $HOME/.keychain/$HOSTNAME-sh
+#fi
+#if [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ]; then
+#  . $HOME/.keychain/$HOSTNAME-sh-gpg
+#fi
 
 # This loads RVM into a shell session.
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  . "$HOME/.rvm/scripts/rvm"
-else
-  if [[ -s "/usr/local/rvm/scripts/rvm" ]]; then
-    . "/usr/local/rvm/scripts/rvm"
-  fi
-fi
+#if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+#  . "$HOME/.rvm/scripts/rvm"
+#else
+#  if [[ -s "/usr/local/rvm/scripts/rvm" ]]; then
+#    . "/usr/local/rvm/scripts/rvm"
+#  fi
+#fi
 
 if [ -f ~/.aliases ]; then
   . ~/.aliases
@@ -83,6 +86,6 @@ fi
 #[ $TERM = "screen" ] && export TERM=rxvt-256color
 
 # needed for ant support
-if [ -f /etc/profile.d/apache-ant.sh ]; then
-  source /etc/profile.d/apache-ant.sh
-fi
+#if [ -f /etc/profile.d/apache-ant.sh ]; then
+#  source /etc/profile.d/apache-ant.sh
+#fi
