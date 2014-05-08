@@ -7,7 +7,7 @@ export LANG=en_US.UTF-8
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mrexception"
+ZSH_THEME="alanpeabody"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -31,7 +31,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mrexception)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,6 +47,10 @@ export EDITOR="vim"
 
 stty -ixon # disables ctrl-s freezing terminal
 set -o vi # turns on vi mode
+
+# attempts to disable bell
+set bell-style none
+setopt NO_BEEP
 
 #initialize keychain
 #keychain github
@@ -82,6 +86,10 @@ fi
 if [ -f ~/.local ]; then
   source ~/.local
 fi
+
+if [ -f ~/.nvm/nvm.sh ]; then
+  source ~/.nvm/nvm.sh
+fi
 # a hack to get vim in the cli to look good in screen
 #[ $TERM = "screen" ] && export TERM=rxvt-256color
 
@@ -89,8 +97,3 @@ fi
 #if [ -f /etc/profile.d/apache-ant.sh ]; then
 #  source /etc/profile.d/apache-ant.sh
 #fi
-
-# Base16 Shell
-BASE16_SCHEME="tomorrow"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
