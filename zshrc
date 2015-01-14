@@ -46,7 +46,6 @@ export NODE_PATH=/home/rob/local/jsctags/lib/jsctags/:$NODE_PATH
 export EDITOR="vim"
 
 stty -ixon # disables ctrl-s freezing terminal
-set -o vi # turns on vi mode
 
 # attempts to disable bell
 set bell-style none
@@ -67,13 +66,13 @@ setopt NO_BEEP
 #fi
 
 # This loads RVM into a shell session.
-#if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-#  . "$HOME/.rvm/scripts/rvm"
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  . "$HOME/.rvm/scripts/rvm"
 #else
 #  if [[ -s "/usr/local/rvm/scripts/rvm" ]]; then
 #    . "/usr/local/rvm/scripts/rvm"
 #  fi
-#fi
+fi
 
 if [ -f ~/.aliases ]; then
   . ~/.aliases
